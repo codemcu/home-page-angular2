@@ -1,0 +1,52 @@
+<section id="aboutMe" class="aboutMe">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 text-right text-faded wow fadeInLeft">
+        <h2 class="section-heading">{{ sectionLive }}</h2>
+         <p>{{ sectionLiveParagraph1 }}</p>
+        <ul class="title">
+          <p *ngFor="let exp of experience">
+             {{ exp.title }}   
+            <li *ngFor="let list of exp.list">
+              {{ list }}  
+            </li>
+          </p>
+          
+        </ul>
+
+      </div>
+      <div class="col-lg-6 wow fadeInRight">
+        <img src="assets/img/img-alcala.png" alt="Puerta de Alcalá" class="img-responsive">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bgSecundary">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-offset-2 col-lg-4 container-hexagon wow fadeInLeft">
+        <div class="hexagon h-1 wow fadeInLeft" data-wow-delay="1.1s">
+          <img src="assets/img/img-videojuegos.png" alt="videojuegos">
+        </div>
+        <div class="hexagon h-2 wow fadeInLeft" data-wow-delay=".7s">
+          <img src="assets/img/img-cine.png" alt="cine">
+        </div>
+        <div class="hexagon h-3 wow fadeInLeft" data-wow-delay=".9s">
+          <img src="assets/img/img-musica.png" alt="musica">
+        </div>
+        <div class="hexagon h-4 wow fadeInLeft" data-wow-delay=".5s">
+          <img src="assets/img/img-viajar.png" alt="viajar">
+        </div>
+        <div class="hexagon h-5 wow fadeInLeft" data-wow-delay=".3s">
+          <img src="assets/img/img-batman.png" alt="batman">
+        </div>
+      </div>
+      <div class="col-lg-6 text-left text-faded wow fadeInRight">
+        <h2 class="section-heading">{{ sectionLive }}</h2>
+          <p>{{ sectionLiveParagraph2 }}</p>
+      </div>
+      
+    </div>
+  </div>
+</section>

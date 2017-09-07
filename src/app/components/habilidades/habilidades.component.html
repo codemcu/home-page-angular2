@@ -1,0 +1,21 @@
+<section id="skills" class="bgSkills">
+  <div class="container">
+    <div class="row">
+      <h2 ng-bind="sectionSkill">Habilidades</h2>
+      <div 
+        *ngFor="let item of sectionContent"
+        class="col-lg-4 vertical-space text-center">
+        <img 
+          [src]="item.img"
+          class="img-responsive wow flipInX" data-wow-delay=".3s"
+          [alt]="item.subtitles">
+        <h3>{{ item.subtitles }}</h3>
+        <ul>
+          <li
+            *ngFor="let list of item.list">
+            {{ list }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
