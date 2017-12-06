@@ -1,11 +1,11 @@
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent } from "app/components/home/home.component";
-import { SobremiComponent } from "app/components/sobremi/sobremi.component";
-import { HabilidadesComponent } from "app/components/habilidades/habilidades.component";
-import { EducacionComponent } from "app/components/educacion/educacion.component";
-import { PortfolioComponent } from "app/components/portfolio/portfolio.component";
-import { ContactoComponent } from "app/components/contacto/contacto.component";
+import { HomeComponent } from 'app/components/home/home.component';
+import { SobremiComponent } from 'app/components/sobremi/sobremi.component';
+import { HabilidadesComponent } from 'app/components/habilidades/habilidades.component';
+import { EducacionComponent } from 'app/components/educacion/educacion.component';
+import { PortfolioComponent } from 'app/components/portfolio/portfolio.component';
+import { ContactoComponent } from 'app/components/contacto/contacto.component';
 
 const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },

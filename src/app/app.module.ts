@@ -12,10 +12,10 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 
 // routes
-import { APP_ROUTING } from "app/app.routes";
+import { APP_ROUTING } from 'app/app.routes';
 
 // services
-
+import { BbddService } from './services/bbdd.service';
 
 @NgModule({
   declarations: [
@@ -29,10 +29,11 @@ import { APP_ROUTING } from "app/app.routes";
     ContactoComponent
   ],
   imports: [
-    BrowserModule,
-    APP_ROUTING
+    BrowserModule
   ],
-  providers: [],
+  providers: [
+    BbddService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

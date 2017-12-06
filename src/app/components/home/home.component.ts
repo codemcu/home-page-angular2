@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BbddService } from '../../services/bbdd.service';
 
 @Component({
   selector: 'app-home',
@@ -7,15 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  public name:string;
-	public jobTitle:string;
+  public texts: Array<any> = [];
+  public name: string;
+  public jobTitle: string;
 
-  constructor() {
-    this.name = "Mauricio Correa";
-	  this.jobTitle = "Front-end developer";
-  }
+  constructor( private _bbdd: BbddService) { }
 
   ngOnInit() {
+    this.texts = [ ...this._bbdd.getTexts() ];
+    this.name = this.texts[0].HOME.NAME;
+    this.jobTitle = this.texts[0].HOME.TITLE;
   }
 
 }

@@ -2,16 +2,16 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-6 text-right text-faded wow fadeInLeft">
-        <h2 class="section-heading">{{ sectionLive }}</h2>
-         <p>{{ sectionLiveParagraph1 }}</p>
+        <h2 class="section-heading">{{ sectionLiveTitle }}</h2>
+         <p>{{ sectionLiveParagraph }}</p>
         <ul class="title">
-          <p *ngFor="let exp of experience">
-             {{ exp.title }}   
-            <li *ngFor="let list of exp.list">
-              {{ list }}  
-            </li>
-          </p>
-          
+          <!--<p *ngFor="let exp of experience">-->
+             <!--{{ exp.title }}-->
+            <!--<li *ngFor="let list of exp.list">-->
+              <!--{{ list }}-->
+            <!--</li>-->
+          <!--</p>-->
+
         </ul>
 
       </div>
@@ -43,10 +43,10 @@
         </div>
       </div>
       <div class="col-lg-6 text-left text-faded wow fadeInRight">
-        <h2 class="section-heading">{{ sectionLive }}</h2>
-          <p>{{ sectionLiveParagraph2 }}</p>
+        <h2 class="section-heading">{{ sectionMeTitle }}</h2>
+          <p>{{ sectionMeParagraph }}</p>
       </div>
-      
+
     </div>
   </div>
 </section>

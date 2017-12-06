@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {BbddService} from '../../services/bbdd.service';
 
 @Component({
   selector: 'app-sobremi',
@@ -7,42 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SobremiComponent implements OnInit {
 
-  public sectionLive:string;
-  public sectionLike:string;  
-  public sectionLiveParagraph1:string;
-  public sectionLiveParagraph2:string;
-  public experience:any[];
+  texts: Array<any> = [];
 
-  constructor() {
-    this.sectionLive = 'Vivo en Madrid';
-    this.sectionLive = 'Sobre mí';
-    this.sectionLiveParagraph1 = 'Soy front-end web developer y cuento con, aproximadamente, 10 años de experiencia. Desde hace algún tiempo estoy estudiando Desarrollo de Aplicaciones Híbridas - SPA´s con AngularJS, IonicFramework. También tengo experiencia en UX y el paquete AdobeSuite para diseño web (Photoshop, Illustrator, AfterEffects)';
-    this.experience = [
-      { 
-        "title": 'Lenguajes / Frameworks',
-        "list": [
-          "Programación Java, Typescript",
-          "Desarrollo web: Javascript (AngularJS, JQuery, NodeJS, NVM, NPM, Gulp, Grunt, Modernizr, BabelJS, Bower, ES6), HTML5, CSS3 (Bootstrap 3, Responsive web design, Media Queries), SASS, LESS, PHP, SQL",          
-        ]
-      },
-      { 
-        "title": 'Herramientas de desarrollo',
-        "list": [
-          "VCS: Git (Sourcetree)",
-          "Sistemas de seguimiento de errores: JIRA, Confluence, Jenkins (Integración continua)"          
-        ]
-      },
-      { 
-        "title": 'Metodologías',
-        "list": [
-          "VCS: Git (Sourcetree)"          
-        ]
-      }
-    ];
-    this.sectionLiveParagraph2 = 'Me considero un ‘friki’ de las tecnologías, me gusta el aprendizaje continuo, los nuevos retos y me entusiasma aprender algo nuevo cada día. Puedo aportar algo de experiencia y buen rollo en los equipos de trabajo';
+  public sectionLiveTitle: string;
+  public sectionLiveParagraph: string;
+  public sectionMeTitle: string;
+  public sectionMeParagraph: string;
+
+  constructor( private _bbdd: BbddService) {
+
   }
 
   ngOnInit() {
+
+    this.texts = [ ...this._bbdd.getTexts() ];
+    console.log(this.texts[0]);
+
+    this.sectionLiveTitle = this.texts[0].ABOUTME.LIVETITLE;
+    this.sectionLiveParagraph = this.texts[0].ABOUTME.LIVE;
+    this.sectionMeTitle = this.texts[0].ABOUTME.METITLE;
+    this.sectionMeParagraph = this.texts[0].ABOUTME.ME;
+
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {BbddService} from '../../services/bbdd.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -7,17 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PortfolioComponent implements OnInit {
 
-  public sectionTitle:string;
-  public img:string;
-  public textButton:string;
+  texts: Array<any> = [];
 
-  constructor() {
-    this.sectionTitle = 'Portafolio';
-    this.img = 'assets/img/img-estudios.jpg';
-    this.textButton = 'Ver portafolio';
+  public sectionTitle: string;
+  public img: string;
+  public textButton: string;
+
+  constructor( private _bbdd: BbddService) {
   }
 
   ngOnInit() {
+    this.texts = [ ...this._bbdd.getTexts() ];
+    this.sectionTitle = this.texts[0].PORTFOLIO.TITLE;
+    this.img = this.texts[0].PORTFOLIO.IMG;
+    this.textButton = this.texts[0].PORTFOLIO.TEXTBUTTON;
   }
 
 }
