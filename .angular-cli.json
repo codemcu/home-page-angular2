@@ -19,10 +19,10 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css",
         "assets/b3/css/bootstrap.min.css",
         "assets/font-awesome/css/font-awesome.min.css",
-        "assets/animate/animate.css"
+        "assets/animate/animate.css",
+        "sass/style.scss"
       ],
       "scripts": [
         "assets/jquery/jquery.min.js",
@@ -57,7 +57,7 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
+    "styleExt": "scss",
     "component": {}
   }
 }
