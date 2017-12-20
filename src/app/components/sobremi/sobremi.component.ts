@@ -12,8 +12,14 @@ export class SobremiComponent implements OnInit {
 
   public sectionLiveTitle: string;
   public sectionLiveParagraph: string;
+
+  public listProgramming: any;
+  public listTools: any;
+  public listMethodology: any;
+
   public sectionMeTitle: string;
   public sectionMeParagraph: string;
+  public sectionMeTextSmall: string;
 
   constructor( private _bbdd: BbddService) {
 
@@ -25,9 +31,14 @@ export class SobremiComponent implements OnInit {
     console.log(this.texts[0]);
 
     this.sectionLiveTitle = this.texts[0].ABOUTME.LIVETITLE;
-    this.sectionLiveParagraph = this.texts[0].ABOUTME.LIVE;
+    this.sectionLiveParagraph = this.texts[0].ABOUTME.LIVE[0].paragraph;
+    this.listProgramming = this.texts[0].ABOUTME.LIVE[0].programming;
+    this.listTools = this.texts[0].ABOUTME.LIVE[0].tools;
+    this.listMethodology = this.texts[0].ABOUTME.LIVE[0].methodology;
+
     this.sectionMeTitle = this.texts[0].ABOUTME.METITLE;
-    this.sectionMeParagraph = this.texts[0].ABOUTME.ME;
+    this.sectionMeParagraph = this.texts[0].ABOUTME.ME.paragraphs;
+    this.sectionMeTextSmall = this.texts[0].ABOUTME.ME.textSmall;
 
   }
 

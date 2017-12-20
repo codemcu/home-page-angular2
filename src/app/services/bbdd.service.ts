@@ -11,9 +11,40 @@ export class BbddService {
       },
       ABOUTME: {
         LIVETITLE: 'Vivo en Madrid',
-        LIVE: '<p>Soy front-end web developer y cuento con, aproximadamente, 10 años de experiencia. Aquí puedes leer todas las tecnologías con las que he trabajado. También tengo experiencia en UX y con el paquete AdobeSuite para diseño web (Photoshop, Illustrator, AfterEffects)</p><p><strong>Lenguajes / Frameworks</strong><ul><li>Programación Java, Typescript</li><li>Desarrollo web: Javascript (AngularJS, JQuery, NodeJS, NVM, NPM, Gulp, Grunt, Modernizr, BabelJS, Bower, ES6), HTML5, CSS3 (Bootstrap 3, Responsive web design, Media Queries), SASS, LESS, PHP, SQL</li></ul><strong>Herramientas de desarrollo</strong><ul><li>VCS: Git (Sourcetree)</li><li>Sistemas de seguimiento de errores: JIRA, Confluence, Jenkins (Integración continua)</li></ul><strong>Metodologías</strong><ul><li>Agile, Scrum</li></ul>',
+        LIVE: [
+          {
+            paragraph: 'Soy front-end web developer y cuento con, aproximadamente, 10 años de experiencia. Aquí puedes leer todas las tecnologías con las que he trabajado. También tengo experiencia en UX y con el paquete AdobeSuite para diseño web (Photoshop, Illustrator, AfterEffects)',
+            programming: {
+              title: 'Lenguajes / Frameworks',
+              list: [
+                'Programación Java, Typescript',
+                'Desarrollo web: Javascript (AngularJS, JQuery, NodeJS, NVM, NPM, Gulp, Grunt, Modernizr, BabelJS, Bower, ES6), HTML5, CSS3 (Bootstrap 3, Responsive web design, Media Queries), SASS, LESS, PHP, SQL'
+              ]
+            },
+            tools: {
+              title: 'Herramientas de desarrollo',
+              list: [
+                'VCS: Git (Sourcetree)',
+                'Sistemas de seguimiento de errores: JIRA, Confluence, Jenkins (Integración continua)',
+                'IDE´s: Eclipse, Visual Studio Code, Webstorm, SublimeText'
+              ]
+            },
+            methodology: {
+              title: 'Metodologías',
+              list: [
+                'Agile, Scrum'
+              ]
+            }
+          }
+        ],
         METITLE: 'Sobre mí',
-        ME: '<p>Me considero un ‘friki’ de las tecnologías, lo puedes comprobar con mi cuenta de Github, donde aparte de algún que otro proyecto, estoy actualmente trabajando en una DEMO de la típica "Lista de tareas" hecha en Angular2, Typescript y Boostrap.</p><p>Me gusta el aprendizaje continuo, los nuevos retos y me entusiasma aprender algo nuevo cada día. Puedo aportar algo de experiencia y buen rollo en los equipos de trabajo</p><p><small>* En la app "Lista de Tareas - Angular2", he utilizado Boostrap 3 para la maquetación, por lo que se puede ver funcionando en móvil y tablet. Typescript como lenguaje de desarrollo y LocalStorage para la persistencia de datos. El backend quiero hacerlo con nodeJS y mongoJS</small>'
+        ME: {
+          paragraphs: [
+            'Me considero un ‘friki’ de las tecnologías, lo puedes comprobar con mi cuenta de Github, donde aparte de algún que otro proyecto, estoy actualmente trabajando en una DEMO de la típica "Lista de tareas" hecha en Angular2, Typescript y Boostrap.',
+            'Me gusta el aprendizaje continuo, los nuevos retos y me entusiasma aprender algo nuevo cada día. Puedo aportar algo de experiencia y buen rollo en los equipos de trabajo'
+          ],
+          textSmall: '* En la app "Lista de Tareas - Angular2", he utilizado Boostrap 3 para la maquetación, por lo que se puede ver funcionando en móvil y tablet. Typescript como lenguaje de desarrollo y LocalStorage para la persistencia de datos. El backend quiero hacerlo con nodeJS y mongoJS'
+        }
       },
       SKYLLS: [
         {
