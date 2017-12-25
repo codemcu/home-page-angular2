@@ -89,12 +89,13 @@ section {
 		background: #242424; /* Old browsers */
 		//background: linear-gradient(135deg, #333333 0%, #424242 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 		//filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#333333", endColorstr="#424242", GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-		padding: 20px 0 25px;
+		padding: 0 0 25px;
 		position: relative;
 		img.perfil {
 			width: 100%;
 			max-width: 190px;
 			border-radius: 50%;
+      margin-bottom: 20px;
 		}
 		li {
 			display: block;
@@ -121,8 +122,6 @@ section {
 				}
 			}
 		}
-
-
 		.elem-esp{
 			margin-left: -30px;
 		}
@@ -140,6 +139,7 @@ section {
 		h2{
 			color: $colorTextoSecundario;
 			padding-left: 15px;
+      padding-top: 25px;
 		}
 		p {
 			margin: 0 0 5px;
@@ -154,16 +154,20 @@ section {
 			color: $colorTextoSecundario;
 		}
 		.diff{
-			position: absolute;
-			top: 0;
-			right: 0;
+			//position: absolute;
+			//top: 0;
+			//right: 0;
 			background-color: $colorTextoSecundario;
-			height: 100%;
-			width: 380px;
+			//height: 100%;
+			//width: 380px;
 			p{
-				padding: 50px 40px 10px 40px;
+				padding: 10px 40px 10px 40px;
 			}
 		}
+    .container-fluid {
+      padding-left: 0;
+      padding-right: 0;
+    }
 	}
 	hr{
 		width: 100px;
