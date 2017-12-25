@@ -16,6 +16,7 @@ import { APP_ROUTING } from 'app/app.routes';
 
 // services
 import { BbddService } from './services/bbdd.service';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { BbddService } from './services/bbdd.service';
     HabilidadesComponent,
     EducacionComponent,
     PortfolioComponent,
-    ContactoComponent
+    ContactoComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule
