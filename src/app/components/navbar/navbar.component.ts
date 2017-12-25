@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BbddService } from '../../services/bbdd.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,28 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  public menu:any[];
-  public brand:string
+  public menu: any[];
 
-  constructor() {
-    this.menu = [
-      {item: 'Home', link: 'home'},
-      {item: 'Sobre mí', link: 'sobremi'},
-      {item: 'Habilidades', link: 'habilidades'},
-      {item: 'Educación', link: 'educacion'},
-      {item: 'Portfolio', link: 'portfolio'},
-      {item: 'Contacto', link: 'contacto'}
-    ]
-
-    this.getMenu();
-    this.brand = 'Mauricio Correa'
-  }
+  constructor( private _service: BbddService) { }
 
   ngOnInit() {
-  }
-
-  public getMenu () {
-    return this.menu;
+    this.menu = this._service.getTexts();
   }
 
 }
