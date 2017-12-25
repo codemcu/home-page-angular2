@@ -5,6 +5,14 @@ export class BbddService {
 
   texts: Array<any> = [
     {
+      MENU: [
+        {item: 'Home', link: 'home'},
+        {item: 'Sobre mí', link: 'aboutMe'},
+        {item: 'Habilidades', link: 'skills'},
+        {item: 'Educación', link: 'education'},
+        {item: 'Portfolio', link: 'portfolio'},
+        {item: 'Contacto', link: 'contact'}
+      ],
       HOME: {
         NAME: 'Mauricio Correa',
         TITLE: 'Front-end developer'
