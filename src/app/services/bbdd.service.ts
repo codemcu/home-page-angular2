@@ -149,8 +149,7 @@ export class BbddService {
             {logo: 'assets/img/logo-javascript.png', alt: 'logo Javascript', title: 'Javascript'},
             {logo: 'assets/img/logo-sass.png', alt: 'logo SASS', title: 'Sass'},
             {logo: 'assets/img/logo-angular.png', alt: 'logo Angular', title: 'Angular'},
-            {logo: 'assets/img/logo-bootstrap.png', alt: 'logo Bootstrap', title: 'Bootstrap'},
-            {logo: 'assets/img/logo-gulp.png', alt: 'logo Gulp', title: 'Gulp'}
+            {logo: 'assets/img/logo-bootstrap.png', alt: 'logo Bootstrap', title: 'Bootstrap'}
           ]
         },
         CV: '¿Quieres saber más?, descarga mi curriculum completo',
