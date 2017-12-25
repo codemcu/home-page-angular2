@@ -56,7 +56,7 @@ export class BbddService {
             'SASS (2 años)',
             'Bootstrap3 (3 años)',
             'Responsive design (3 años)',
-            '>Wireframes y Prototipado (6 meses)'
+            'Wireframes y Prototipado (6 meses)'
           ]
         },
         {
