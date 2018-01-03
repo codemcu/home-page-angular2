@@ -25,7 +25,7 @@
         "sass/style.scss"
       ],
       "scripts": [
-        "assets/jquery/jquery.min.js",
+        "assets/jquery/jquery.js",
         "assets/b3/js/bootstrap.min.js",
         "assets/wow.min.js",
         "assets/main.js"
@@ -38,6 +38,7 @@
     }
   ],
   "e2e": {
+
     "protractor": {
       "config": "./protractor.conf.js"
     }

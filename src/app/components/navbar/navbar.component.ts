@@ -10,10 +10,15 @@ export class NavbarComponent implements OnInit {
 
   public menu: any[];
 
+
   constructor( private _service: BbddService) { }
 
   ngOnInit() {
     this.menu = this._service.getTexts();
   }
 
+  removeClass() {
+    const clas = document.getElementsByClassName('navbar-collapse');
+    clas[0].classList.remove('in');
+  }
 }

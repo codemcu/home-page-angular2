@@ -15,7 +15,7 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
           <li  *ngFor="let item of menu[0].MENU">
-            <a class="page-scroll" href="#{{ item.link }}">{{ item.item }}</a>
+            <a class="page-scroll" (click)="removeClass()" href="#{{ item.link }}">{{ item.item }}</a>
           </li>
 				</ul>
 			</div>
