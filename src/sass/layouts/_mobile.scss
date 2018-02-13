@@ -34,9 +34,26 @@
 			img {
 				max-width: 55px;
 			}
+      &.h-0{
+        position: absolute;
+        left: 50px;
+        top: 64px;
+        img{
+          opacity: .3;
+        }
+      }
 			&.h-1{
 				position: absolute;
+        left: 15px;
 			}
+      &.h-1b{
+        position: absolute;
+        left: 125px;
+        top: -64px;
+        img{
+          opacity: .3;
+        }
+      }
 			&.h-2{
 				position: absolute;
 				left: 88px;
@@ -51,11 +68,17 @@
 				position: absolute;
 				left: 124px;
 				top: 64px;
+        img{
+          opacity: .3;
+        }
 			}
 			&.h-5{
 				position: absolute;
 				left: 161px;
 				top: 0px;
+        img {
+          top: 10px;
+        }
 			}
 		}
 		.hexagon:before,

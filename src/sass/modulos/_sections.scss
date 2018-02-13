@@ -29,6 +29,14 @@ section {
 		background-repeat: no-repeat;
 		background-position: top center;
 		background-origin: content-box;
+    .container-hexagon-imgs {
+      position: absolute;
+      background-color: red;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      top: 15%;
+      left: 30%;
+    }
 	}
 	.hexagon {
 		position: relative;
@@ -204,6 +212,12 @@ section {
 		background: #2e3951; /* Old browsers */
 		background: linear-gradient(135deg, #2e3951 0%, #4d5872 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#2e3951", endColorstr="#4d5872", GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    .fa {
+      position: absolute;
+      color:black;
+      font: normal normal normal 36px/1 FontAwesome;
+      left: 18px;
+    }
 
 	}
 	&.bgEducation{

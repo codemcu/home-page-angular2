@@ -28,24 +28,35 @@
 <section class="bgSecundary">
   <div class="container">
     <div class="row">
-      <div class="col-lg-offset-2 col-lg-4 container-hexagon wow fadeInLeft" [ngStyle]="{'background-image': 'url(../assets/img/img-panel.png)'}">
-        <div class="hexagon h-1 wow fadeInLeft" data-wow-delay="1.1s">
-          <img src="assets/img/img-videojuegos.png" alt="videojuegos">
-        </div>
-        <div class="hexagon h-2 wow fadeInLeft" data-wow-delay=".7s">
-          <img src="assets/img/img-cine.png" alt="cine">
-        </div>
-        <div class="hexagon h-3 wow fadeInLeft" data-wow-delay=".9s">
-          <img src="assets/img/img-musica.png" alt="musica">
-        </div>
-        <div class="hexagon h-4 wow fadeInLeft" data-wow-delay=".5s">
-          <img src="assets/img/img-viajar.png" alt="viajar">
-        </div>
-        <div class="hexagon h-5 wow fadeInLeft" data-wow-delay=".3s">
-          <img src="assets/img/img-batman.png" alt="batman">
+      <div class="col-lg-offset-2 col-lg-4 col-md-6 container-hexagon wow fadeInLeft" [ngStyle]="{'background-image': 'url(../assets/img/img-panel.png)'}">
+        <div class="container-hexagon-imgs">
+          <div class="hexagon h-0 wow fadeInLeft" data-wow-delay="1.3s">
+            <img src="assets/img/img-videojuegos.png" alt="videojuegos">
+          </div>
+          <div class="hexagon h-1 wow fadeInLeft" data-wow-delay="1.1s">
+            <a href="http://steamcommunity.com/id/mauaunot/" target="_blank"><i class="fa fa-steam" aria-hidden="true"></i></a>
+          </div>
+          <div class="hexagon h-1b wow fadeInLeft" data-wow-delay=".7s">
+            <img src="assets/img/img-cine.png" alt="cine">
+          </div>
+          <div class="hexagon h-2 wow fadeInLeft" data-wow-delay=".7s">
+            <a href="https://www.youtube.com/channel/UC26MiwyceG9CEr8_jqmC4QA?view_as=subscriber" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+          </div>
+          <!--<div class="hexagon h-3" data-wow-delay=".9s">-->
+            <!--<img src="assets/img/img-musica.png" alt="musica">-->
+          <!--</div>-->
+          <div class="hexagon h-3 wow fadeInLeft" data-wow-delay=".9s">
+            <a href="https://www.last.fm/es/user/mauaunot" target="_blank"><i class="fa fa-lastfm" aria-hidden="true"></i></a>
+          </div>
+          <div class="hexagon h-4 wow fadeInLeft" data-wow-delay=".5s">
+            <img src="assets/img/img-viajar.png" alt="viajar">
+          </div>
+          <div class="hexagon h-5 wow fadeInLeft" data-wow-delay=".3s">
+            <a href="https://trakt.tv/users/mauaunot" target="_blank"><img src="assets/img/img-trakt.png" alt="batman"></a>
+          </div>
         </div>
       </div>
-      <div class="col-lg-6 text-left text-faded wow fadeInRight">
+      <div class="col-lg-6 col-md-6 text-left text-faded wow fadeInRight">
         <h2 class="section-heading">{{ sectionMeTitle }}</h2>
         <div *ngFor="let p of sectionMeParagraph">
           <p>{{ p }}</p>
