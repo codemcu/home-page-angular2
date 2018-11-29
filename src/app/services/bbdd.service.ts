@@ -48,10 +48,9 @@ export class BbddService {
         METITLE: 'Sobre mí',
         ME: {
           paragraphs: [
-            'Me considero un ‘friki’ de las tecnologías, lo puedes comprobar con mi cuenta de Github, donde aparte de algún que otro proyecto, estoy actualmente trabajando en una DEMO de la típica "Lista de tareas" hecha en Angular2, Typescript y Boostrap.',
+            'Me considero un ‘friki’ de las tecnologías, actualmente estoy estudiando un Máster en Programación FullStack con JavaScript y Node.js en la escuela Fictizia. Tengo una cuenta en Github en la que voy subindo alguna que otra cosilla y en mi poco tiempo libre me lo paso con videojuegos, comics, o escuchando música',
             'Me gusta el aprendizaje continuo, los nuevos retos y me entusiasma aprender algo nuevo cada día. Puedo aportar algo de experiencia y buen rollo en los equipos de trabajo'
-          ],
-          textSmall: '* En la app "Lista de Tareas - Angular2", he utilizado Boostrap 3 para la maquetación, por lo que se puede ver funcionando en móvil y tablet. Typescript como lenguaje de desarrollo y LocalStorage para la persistencia de datos. El backend quiero hacerlo con nodeJS y mongoJS'
+          ]
         }
       },
       SKYLLS: [
@@ -59,10 +58,11 @@ export class BbddService {
           subtitles: '{ Maquetación responsive }',
           img: 'assets/img/habilidades_1.png',
           list: [
-            'HTML5 (5 años)',
+            'HTML5 (7 años)',
             'CSS3 (7 años)',
             'SASS (2 años)',
-            'Bootstrap3 (3 años)',
+            'Bootstrap 3 (3 años)',
+            'Bootstrap 4 (1 años)',
             'Responsive design (3 años)',
             'Wireframes y Prototipado (6 meses)'
           ]
@@ -84,11 +84,11 @@ export class BbddService {
           img: 'assets/img/habilidades_3.png',
           list: [
             'Javascript (3 años)',
-            'JQuery (1.5 año)',
+            'JQuery (1 año)',
             'AngularJs (8 meses)',
-            'Angular (6 meses)',
+            'Angular 2-5 (1 año)',
             'Node.js (1 año)',
-            'GIT (1 año)',
+            'GIT (2 año)',
             'Typescript (1 año)'
           ]
         }
