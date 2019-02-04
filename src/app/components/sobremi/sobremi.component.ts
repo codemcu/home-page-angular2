@@ -28,7 +28,6 @@ export class SobremiComponent implements OnInit {
   ngOnInit() {
 
     this.texts = [ ...this._bbdd.getTexts() ];
-    console.log(this.texts[0]);
 
     this.sectionLiveTitle = this.texts[0].ABOUTME.LIVETITLE;
     this.sectionLiveParagraph = this.texts[0].ABOUTME.LIVE[0].paragraph;

@@ -167,9 +167,7 @@ export class BbddService {
     }
   ];
 
-  constructor() {
-    console.log('service!!!');
-  }
+  constructor() {}
 
   getTexts (): any {
     return this.texts;
