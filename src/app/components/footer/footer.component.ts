@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BbddService } from '../../services/bbdd.service';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 @Component({
   selector: 'app-footer',
@@ -11,15 +11,20 @@ export class FooterComponent implements OnInit {
   public texts: Array<any> = [];
   public anio: number;
   public name: string;
+  public ref: any;
 
-  constructor( private _bbdd: BbddService ) { }
+  constructor(private db: AngularFireDatabase ) {
+    this.ref = db.object('HOME');
+  }
 
   ngOnInit() {
-    this.texts = [ ...this._bbdd.getTexts() ];
-    this.name = this.texts[0].HOME.NAME;
-
-    const anio = new Date().getFullYear();
-    this.anio = anio;
+    this.ref.snapshotChanges()
+      .subscribe(
+        (item: any) => {
+          this.name = item.payload.val().NAME;
+        }
+      )
+    this.anio = new Date().getFullYear();
   }
 
 }

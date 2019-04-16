@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BbddService } from '../../services/bbdd.service';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 @Component({
   selector: 'app-home',
@@ -11,13 +11,20 @@ export class HomeComponent implements OnInit {
   public texts: Array<any> = [];
   public name: string;
   public jobTitle: string;
+  public ref: any;
 
-  constructor( private _bbdd: BbddService) { }
+  constructor( private db: AngularFireDatabase) {
+    this.ref = db.object('HOME');
+  }
 
   ngOnInit() {
-    this.texts = [ ...this._bbdd.getTexts() ];
-    this.name = this.texts[0].HOME.NAME;
-    this.jobTitle = this.texts[0].HOME.TITLE;
+    this.ref.snapshotChanges()
+      .subscribe(
+        item => {
+          this.name = item.payload.val().NAME;
+          this.jobTitle = item.payload.val().TITLE;
+        }
+      )
   }
 
 }
