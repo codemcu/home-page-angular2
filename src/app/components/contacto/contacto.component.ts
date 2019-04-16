@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {BbddService} from '../../services/bbdd.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-contacto',
@@ -19,7 +20,9 @@ export class ContactoComponent implements OnInit {
   public imgLogos: Array<any> = [];
   public socialNetworks: Array<any> = [];
 
-  constructor( private _bbdd: BbddService) { }
+  constructor( private _bbdd: BbddService) {
+
+  }
 
   ngOnInit() {
 

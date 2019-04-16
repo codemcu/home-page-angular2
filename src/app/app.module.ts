@@ -18,6 +18,18 @@ import { APP_ROUTING } from 'app/app.routes';
 import { BbddService } from './services/bbdd.service';
 import { FooterComponent } from './components/footer/footer.component';
 
+// firebase
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+export const config = {
+  apiKey: "AIzaSyCcJndUjYTzpSrY6wUEEvHs1J0XEuVGb6U",
+  authDomain: "codemcu-homepage.firebaseapp.com",
+  databaseURL: "https://codemcu-homepage.firebaseio.com",
+  projectId: "codemcu-homepage",
+  storageBucket: "codemcu-homepage.appspot.com",
+  messagingSenderId: "591158647909"
+};
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +43,9 @@ import { FooterComponent } from './components/footer/footer.component';
     FooterComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AngularFireModule.initializeApp(config),
+    AngularFireDatabaseModule
   ],
   providers: [
     BbddService
