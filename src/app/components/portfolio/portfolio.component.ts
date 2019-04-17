@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {BbddService} from '../../services/bbdd.service';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 @Component({
   selector: 'app-portfolio',
@@ -13,15 +13,24 @@ export class PortfolioComponent implements OnInit {
   public sectionTitle: string;
   public img: string;
   public textButton: string;
+  public ref: string;
 
-  constructor( private _bbdd: BbddService) {
+  constructor(private db: AngularFireDatabase) {
   }
 
   ngOnInit() {
-    this.texts = [ ...this._bbdd.getTexts() ];
-    this.sectionTitle = this.texts[0].PORTFOLIO.TITLE;
-    this.img = this.texts[0].PORTFOLIO.IMG;
-    this.textButton = this.texts[0].PORTFOLIO.TEXTBUTTON;
+
+    const ref = this.db.object('PORTFOLIO');
+    ref.snapshotChanges()
+      .subscribe(
+        (item: any) => {
+          // this.ref = item.payload.val();
+          this.sectionTitle = item.payload.val().TITLE;
+          this.img = item.payload.val().IMG;
+          this.textButton = item.payload.val().TEXTBUTTON;
+        }
+      )
+
   }
 
 }

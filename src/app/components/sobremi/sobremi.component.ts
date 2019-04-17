@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {BbddService} from '../../services/bbdd.service';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 @Component({
   selector: 'app-sobremi',
@@ -21,24 +21,25 @@ export class SobremiComponent implements OnInit {
   public sectionMeParagraph: string;
   public sectionMeTextSmall: string;
 
-  constructor( private _bbdd: BbddService) {
-
+  constructor(private db: AngularFireDatabase) {
   }
 
   ngOnInit() {
 
-    this.texts = [ ...this._bbdd.getTexts() ];
+    const ref = this.db.object('ABOUTME');
+    ref.snapshotChanges()
+      .subscribe(
+        (item: any) => {
+          this.sectionLiveTitle = item.payload.val().LIVETITLE;
+          this.sectionLiveParagraph = item.payload.val().LIVE[0].paragraph;
+          this.listProgramming = item.payload.val().LIVE[0].programming;
+          this.listTools = item.payload.val().LIVE[0].tools;
+          this.listMethodology = item.payload.val().LIVE[0].methodology;
 
-    this.sectionLiveTitle = this.texts[0].ABOUTME.LIVETITLE;
-    this.sectionLiveParagraph = this.texts[0].ABOUTME.LIVE[0].paragraph;
-    this.listProgramming = this.texts[0].ABOUTME.LIVE[0].programming;
-    this.listTools = this.texts[0].ABOUTME.LIVE[0].tools;
-    this.listMethodology = this.texts[0].ABOUTME.LIVE[0].methodology;
-
-    this.sectionMeTitle = this.texts[0].ABOUTME.METITLE;
-    this.sectionMeParagraph = this.texts[0].ABOUTME.ME.paragraphs;
-    this.sectionMeTextSmall = this.texts[0].ABOUTME.ME.textSmall;
-
+          this.sectionMeTitle = item.payload.val().METITLE;
+          this.sectionMeParagraph = item.payload.val().ME.paragraphs;
+          this.sectionMeTextSmall = item.payload.val().ME.textSmall;
+        }
+      )
   }
-
 }

@@ -1,7 +1,7 @@
 <section id="aboutMe" class="aboutMe">
   <div class="container">
     <div class="row">
-      <div class="col-lg-6 text-right text-faded wow fadeInLeft">
+      <div *ngIf="listProgramming && listTools && listMethodology" class="col-lg-6 text-right text-faded wow fadeInLeft">
         <h2 class="section-heading">{{ sectionLiveTitle }}</h2>
         <p>{{ sectionLiveParagraph }}</p>
         <p class="title">{{listProgramming.title}}</p>

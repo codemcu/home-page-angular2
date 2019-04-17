@@ -8,13 +8,13 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand page-scroll" href="#page-top">{{ menu[0].HOME.NAME | uppercase}}</a>
+				<a *ngIf="name" class="navbar-brand page-scroll" href="#page-top">{{ name.NAME | uppercase}}</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-          <li  *ngFor="let item of menu[0].MENU">
+          <li  *ngFor="let item of menu">
             <a class="page-scroll" (click)="removeClass()" href="#{{ item.link }}">{{ item.item }}</a>
           </li>
 				</ul>

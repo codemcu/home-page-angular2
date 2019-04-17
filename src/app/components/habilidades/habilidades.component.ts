@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {BbddService} from '../../services/bbdd.service';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 @Component({
   selector: 'app-habilidades',
@@ -10,13 +10,19 @@ export class HabilidadesComponent implements OnInit {
 
   public texts: Array<any> = [];
   public sectionContent: Array<any> = [];
+  public ref: any;
 
-  constructor( private _bbdd: BbddService) {
+  constructor(private db: AngularFireDatabase) {
   }
 
   ngOnInit() {
-    this.texts = [ ...this._bbdd.getTexts() ];
-    this.sectionContent = [ ...this.texts[0].SKYLLS ];
+    this.ref = this.db.object('SKYLLS');
+    this.ref.snapshotChanges()
+      .subscribe(
+        (item: any) => {
+          this.sectionContent = item.payload.val();
+        }
+      )
   }
 
 }
