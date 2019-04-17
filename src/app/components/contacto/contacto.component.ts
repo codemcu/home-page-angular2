@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {BbddService} from '../../services/bbdd.service';
-import { Observable } from 'rxjs';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 @Component({
   selector: 'app-contacto',
@@ -19,22 +18,26 @@ export class ContactoComponent implements OnInit {
   public imgPerfil: string;
   public imgLogos: Array<any> = [];
   public socialNetworks: Array<any> = [];
+  public ref: any;
 
-  constructor( private _bbdd: BbddService) {
+  constructor( private db: AngularFireDatabase) {
 
   }
 
   ngOnInit() {
-
-    this.texts = [ ...this._bbdd.getTexts() ];
-    this.sectionTitle = this.texts[0].CONTACT.TITLESECTION;
-    this.sectionImg = this.texts[0].CONTACT.IMGSOCIALNETWORKS;
-    this.imgLogos = this.texts[0].CONTACT.CONSTRUCT.IMGS;
-    this.construct = this.texts[0].CONTACT.CONSTRUCT.WEB;
-    this.cv = this.texts[0].CONTACT.CV;
-    this.cr = this.texts[0].CONTACT.CR;
-    this.imgPerfil = this.texts[0].CONTACT.IMGPERFIL;
-    this.socialNetworks = this.texts[0].CONTACT.SOCIALNETWORKS;
+    this.ref = this.db.object('CONTACT');
+    this.ref.snapshotChanges()
+      .subscribe(
+        (item: any) => {
+          this.sectionTitle = item.payload.val().TITLESECTION;
+          this.sectionImg = item.payload.val().IMGSOCIALNETWORKS;
+          this.imgLogos = item.payload.val().CONSTRUCT.IMGS;
+          this.construct = item.payload.val().CONSTRUCT.WEB;
+          this.cv = item.payload.val().CV;
+          this.cr = item.payload.val().CR;
+          this.imgPerfil = item.payload.val().IMGPERFIL;
+          this.socialNetworks = item.payload.val().SOCIALNETWORKS;
+        }
+      )
   }
-
 }
