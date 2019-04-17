@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 @Component({
   selector: 'app-educacion',
@@ -9,35 +10,20 @@ export class EducacionComponent implements OnInit {
 
   public sectionTitle:string;
   public sectionContent:any[];
+  public ref: any;
 
-  constructor() {
-
-    this.sectionTitle = "Educación";
-    this.sectionContent = [
-      {
-        "subtitles": "{ Desarrollo front-end con frameworks Javascript }",
-        "class": "fa-beer",
-        "description": "Universitat Oberta de Catalunya",
-      },
-      {
-        "subtitles": "{ Desarrollo en HTML5, CSS y Javascript de WebApps, incluyendo móviles FirefoxOS }",
-        "class": "fa-coffee",
-        "description": "Universidad Politécnica de Madrid",
-      },
-      {
-        "subtitles": "{ Desarrollo de servicios en la nube con HTML5, Javascript y Node.js }",
-        "class": "fa-flask",
-        "description": "Universidad Politécnica de Madrid",
-      },
-      {
-        "subtitles": "{ Desarrollo de aplicaciones web }",
-        "class": "fa-glass",
-        "description": "Centre d´Estudis Politécnics - UCOC",
-      }
-    ]
+  constructor(private db: AngularFireDatabase) {
   }
 
   ngOnInit() {
+    this.sectionTitle = "Educación";
+    this.ref = this.db.object('EDUCATION');
+    this.ref.snapshotChanges()
+      .subscribe(
+        (item: any) => {
+          this.sectionContent = item.payload.val();
+        }
+      )
   }
 
 }
